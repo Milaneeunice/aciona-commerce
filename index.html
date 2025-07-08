@@ -70,6 +70,44 @@
   text-decoration: none;
 }
 
+  .clients-section {
+  background-color: #0f0f0f;
+  color: #fff;
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.clients-section h2 {
+  font-size: 2.5rem;
+  color: #c5ff40; /* Verde neon claro */
+  margin-bottom: 1rem;
+}
+
+.clients-section p {
+  font-size: 1.1rem;
+  color: #ccc;
+  margin-bottom: 3rem;
+}
+
+.client-logos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 2rem;
+  justify-items: center;
+  align-items: center;
+}
+
+.client-logos img {
+  max-width: 120px;
+  max-height: 60px;
+  opacity: 0.8;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.client-logos img:hover {
+  transform: scale(1.1);
+  opacity: 1;
+}
 
     footer { text-align: center; padding: 2rem; font-size: 0.9rem; color: #aaa; }
   </style>

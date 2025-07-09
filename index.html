@@ -1,108 +1,95 @@
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Aciona Commerce - A Máquina de Vendas para o Atacado de Moda</title>
-  <link href="https://drive.google.com/file/d/1rB29k_aVE6yT6eVKGh2xom6cm27Z19Fh/view?usp=drive_link" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
     * { box-sizing: border-box; }
-    body { margin: 0; font-family: 'Inter', sans-serif; background-color: #0f0f0f; color: #ffffff; }
+    body { margin: 0; font-family: 'Inter', sans-serif; background-color: #0f0f0f; color: #ffffff; scroll-behavior: smooth; }
 
     header, section, footer { padding: 4rem 2rem; max-width: 1200px; margin: auto; }
 
-    header { display: flex; justify-content: space-between; align-items: center; }
+    header { display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; background-color: #0f0f0f; z-index: 1000; }
     .logo { font-size: 1.8rem; font-weight: 800; color: #bcf452; }
 
-    nav a { margin: 0 1rem; color: #ffffff; text-decoration: none; font-weight: 500; }
+    nav a { margin: 0 1rem; color: #ffffff; text-decoration: none; font-weight: 500; transition: 0.3s; }
+    nav a:hover { color: #bcf452; }
 
     .hero { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 2rem; padding-top: 6rem; }
     .hero-text { flex: 1; }
     .hero h1 { font-size: 3.2rem; margin-bottom: 1rem; line-height: 1.2; }
-    .hero p { font-size: 1.2rem; line-height: 1.6; }
+    .hero p { font-size: 1.2rem; line-height: 1.6; max-width: 90%; }
 
     .hero-image { flex: 1; }
-    .hero-image img { width: 100%; border-radius: none; box-shadow: none rgba(89, 255, 177, 0.3); }
+    .hero-image img { width: 100%; border-radius: 0; box-shadow: none; }
 
-    .section-title { font-size: 2.4rem; margin-bottom: 2rem; color: #bcf452; }
+    .section-title { font-size: 2.4rem; margin-bottom: 2rem; color: #bcf452; text-align: center; }
 
-    .features { display: flex; flex-wrap: wrap; gap: 2rem; }
-    .feature-card { background-color: #1c1c1c; padding: 2rem; border-radius: 20px; flex: 1 1 45%; box-shadow: 0 0 15px rgba(0,0,0,0.4); }
-    .feature-card h3 { color: #bcf452; margin-bottom: 1rem; }
+    .features { display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center; }
+    .feature-card { background-color: #1c1c1c; padding: 2rem; border-radius: 20px; flex: 1 1 45%; max-width: 500px; box-shadow: 0 0 15px rgba(0,0,0,0.4); transition: transform 0.3s ease; }
+    .feature-card:hover { transform: translateY(-5px); }
+    .feature-card h3 { color: #bcf452; margin-bottom: 1rem; font-size: 1.3rem; }
     .feature-card p { font-size: 1rem; line-height: 1.6; }
-
-    .testimonials { background-color: #141414; padding: 4rem 2rem; border-radius: 20px; }
-    .testimonial { margin-bottom: 2rem; border-left: 4px solid #bcf452; padding-left: 1.5rem; font-style: italic; }
 
     .form-section { background-color: #1f1f1f; padding: 3rem 2rem; border-radius: 20px; margin-top: 4rem; text-align: center; }
     .form-section input, .form-section textarea { width: 100%; padding: 1rem; margin-top: 1rem; border-radius: 10px; border: none; font-size: 1rem; }
-    .form-section button { margin-top: 2rem; background-color: #bcf452; color: #000; font-weight: bold; padding: 1rem 2rem; border-radius: 30px; border: none; cursor: pointer; }
+    .form-section button { margin-top: 2rem; background-color: #bcf452; color: #000; font-weight: bold; padding: 1rem 2rem; border-radius: 30px; border: none; cursor: pointer; transition: background-color 0.3s; }
+    .form-section button:hover { background-color: #d4ff70; }
 
     @keyframes pulse {
-  0% {
-    transform: scale(1);
-    box-shadow: 0 0 0 0 rgba(197, 255, 89, 0.7);
-  }
-  70% {
-    transform: scale(1.05);
-    box-shadow: 0 0 0 10px rgba(197, 255, 89, 0);
-  }
-  100% {
-    transform: scale(1);
-    box-shadow: 0 0 0 0 rgba(197, 255, 89, 0);
-  }
-}
+      0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(197, 255, 89, 0.7); }
+      70% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(197, 255, 89, 0); }
+      100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(197, 255, 89, 0); }
+    }
 
-/* Botão Pulsante no início */    
-.botao-pulsante {
-  background-color: #c5ff59;
-  color: #000;
-  border: none;
-  border-radius: 40px;
-  padding: 1rem 2rem;
-  font-weight: bold;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
-  animation: pulse 2s infinite;
-  display: inline-block;
-  text-align: center;
-  text-decoration: none;
-}
+    .botao-pulsante {
+      background-color: #c5ff59;
+      color: #000;
+      border: none;
+      border-radius: 40px;
+      padding: 1rem 2rem;
+      font-weight: bold;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+      animation: pulse 2s infinite;
+      display: inline-block;
+      text-align: center;
+      text-decoration: none;
+    }
 
- /* Seção de clientes */   
- .carousel {
-  overflow: hidden;
-  width: 100%;
-  position: relative;
-}
+    .clientes-texto { text-align: center; margin-bottom: 2rem; }
+    .clientes-texto h2 { font-size: 2.5rem; color: #bcf452; }
+    .clientes-texto span { color: #ffffff; }
+    .clientes-texto p { color: #aaa; font-size: 1.1rem; }
 
-.carousel-track {
-  display: flex;
-  gap: 3rem;
-  animation: scroll-loop 30s linear infinite;
-  width: max-content;
-}
+    .carousel { overflow: hidden; width: 100%; position: relative; }
+    .carousel-track {
+      display: flex;
+      gap: 3rem;
+      animation: scroll-loop 40s linear infinite;
+      width: max-content;
+    }
 
-.carousel-track img {
-  max-height: 90px;
-  filter: grayscale(100%);
-  opacity: 0.7;
-  transition: all 0.3s ease;
-}
+    .carousel-track img {
+      max-height: 90px;
+      filter: grayscale(100%);
+      opacity: 0.7;
+      transition: all 0.3s ease;
+    }
 
-.carousel-track img:hover {
-  filter: grayscale(0%);
-  opacity: 1;
-  transform: scale(1.05);
-}
+    .carousel-track img:hover {
+      filter: grayscale(0%);
+      opacity: 1;
+      transform: scale(1.05);
+    }
 
-/* Scroll infinito lateral */
-@keyframes scroll-loop {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
+    @keyframes scroll-loop {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
 
     footer { text-align: center; padding: 2rem; font-size: 0.9rem; color: #aaa; }
   </style>
@@ -110,12 +97,10 @@
 <body>
   <header>
     <div class="logotipo">
-  <a href="/aciona-commerce/">
-  <img src="logotipo.png" alt="Logo Aciona Commerce" style="height: 50px;" />
-</a>
-
-</div>
-
+      <a href="/aciona-commerce/">
+        <img src="logotipo.png" alt="Logo Aciona Commerce" style="height: 50px;" />
+      </a>
+    </div>
     <nav>
       <a href="#servicos">Serviços</a>
       <a href="#clientes">Clientes</a>
@@ -128,9 +113,8 @@
       <h1>Seu concorrente ainda tá no WhatsApp.<br>Você vai esperar ele te ultrapassar no E-commerce?</h1>
       <p>Transformamos marcas de moda no atacado em potências digitais com e-commerces que vendem todos os dias, de forma integrada e estratégica.</p>
       <button class="botao-pulsante" onclick="window.location.href='https://wa.me/5581988906161?text=Ol%C3%A1!%20Gostaria%20de%20conhecer%20melhor%20a%20Aciona%20Commerce'">
-  Quero faturar com um E-commerce próprio!
-</button>
-
+        Quero faturar com um E-commerce próprio!
+      </button>
     </div>
     <div class="hero-image">
       <img src="PC.png" alt="Loja de moda online">
@@ -159,34 +143,28 @@
     </div>
   </section>
 
-  <section class="clientes">
-  <div class="clientes-texto">
-    <h2>Nossos <span>Clientes</span></h2>
-    <p>Prezamos pela agilidade e transparência no atendimento de nossos clientes. Veja quem confia na Aciona.</p>
-  </div>
-
-  <div class="carousel">
-    <div class="carousel-track">
-      <!-- 6 logos originais -->
-      <img src="LOGO_CM.png" alt="Cliente 1" />
-      <img src="LOGO_GLUP.png" alt="Cliente 2" />
-      <img src="LOGO_META.png" alt="Cliente 3" />
-      <img src="LOGO_RJNA.png" alt="Cliente 4" />
-      <img src="LOGO_SC.png" alt="Cliente 5" />
-      <img src="LOGO_XIQUE.png" alt="Cliente 6" />
-
-      <!-- Mesmos 6 logos duplicados (para looping) -->
-      <img src="LOGO_CM.png" alt="Cliente 1" />
-      <img src="LOGO_GLUP.png" alt="Cliente 2" />
-      <img src="LOGO_META.png" alt="Cliente 3" />
-      <img src="LOGO_RJNA.png" alt="Cliente 4" />
-      <img src="LOGO_SC.png" alt="Cliente 5" />
-      <img src="LOGO_XIQUE.png" alt="Cliente 6" />
+  <section class="clientes" id="clientes">
+    <div class="clientes-texto">
+      <h2>Nossos <span>Clientes</span></h2>
+      <p>Prezamos pela agilidade e transparência no atendimento de nossos clientes. Veja quem confia na Aciona.</p>
     </div>
-  </div>
-</section>
-
-
+    <div class="carousel">
+      <div class="carousel-track">
+        <img src="LOGO_CM.png" alt="Cliente 1" />
+        <img src="LOGO_GLUP.png" alt="Cliente 2" />
+        <img src="LOGO_META.png" alt="Cliente 3" />
+        <img src="LOGO_RJNA.png" alt="Cliente 4" />
+        <img src="LOGO_SC.png" alt="Cliente 5" />
+        <img src="LOGO_XIQUE.png" alt="Cliente 6" />
+        <img src="LOGO_CM.png" alt="Cliente 1" />
+        <img src="LOGO_GLUP.png" alt="Cliente 2" />
+        <img src="LOGO_META.png" alt="Cliente 3" />
+        <img src="LOGO_RJNA.png" alt="Cliente 4" />
+        <img src="LOGO_SC.png" alt="Cliente 5" />
+        <img src="LOGO_XIQUE.png" alt="Cliente 6" />
+      </div>
+    </div>
+  </section>
 
   <section class="form-section" id="contato">
     <h2 class="section-title">Vamos tirar sua marca do papel e colocar pra vender?</h2>

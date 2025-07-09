@@ -77,6 +77,44 @@
       display: block;
     }
 
+    .nav-desktop {
+  display: flex;
+}
+
+#mobile-nav {
+  display: none;
+  position: absolute;
+  top: 70px;
+  right: 20px;
+  background-color: #1a1a1a;
+  padding: 1rem;
+  border-radius: 10px;
+  text-align: right;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+#mobile-nav a {
+  color: #fff;
+  text-decoration: none;
+}
+
+#mobile-nav.show {
+  display: flex;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .nav-desktop {
+    display: none;
+  }
+
+  .menu-mobile {
+    display: block;
+  }
+}
+
+
     .hero { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 2rem; padding-top: 6rem; }
     .hero-text { flex: 1; }
     .hero h1 { font-size: 3.2rem; margin-bottom: 1rem; line-height: 1.2; }
@@ -189,16 +227,17 @@
       </a>
     </div>
     <div class="menu-mobile" onclick="toggleMenu()">☰</div>
-    <nav>
-      <a href="#servicos">Serviços</a>
-      <a href="#clientes">Clientes</a>
-      <a href="#contato">Contato</a>
-    </nav>
-    <nav id="mobile-nav">
-      <a href="#servicos">Serviços</a>
-      <a href="#clientes">Clientes</a>
-      <a href="#contato">Contato</a>
-    </nav>
+    <nav class="nav-desktop">
+  <a href="#servicos">Serviços</a>
+  <a href="#clientes">Clientes</a>
+  <a href="#contato">Contato</a>
+</nav>
+<div id="mobile-nav">
+  <a href="#servicos">Serviços</a>
+  <a href="#clientes">Clientes</a>
+  <a href="#contato">Contato</a>
+</div>
+
   </header>
 
   <section class="hero">

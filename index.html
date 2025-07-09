@@ -54,6 +54,7 @@
   }
 }
 
+/* Botão Pulsante no início */    
 .botao-pulsante {
   background-color: #c5ff59;
   color: #000;
@@ -70,49 +71,25 @@
   text-decoration: none;
 }
 
- .clientes {
-  background-color: #0f0f0f;
-  color: #fff;
-  padding: 5rem 2rem;
-  text-align: center;
-}
-
-.clientes-texto h2 {
-  font-size: 3rem;
-  margin-bottom: 0.5rem;
-  font-weight: 300;
-}
-
-.clientes-texto h2 span {
-  font-weight: 700;
-  color: #c5ff40;
-}
-
-.clientes-texto p {
-  max-width: 600px;
-  margin: 0 auto 3rem;
-  color: #ccc;
-  font-size: 1.2rem;
-}
-
-/* Carrossel */
-.carousel {
+ /* Seção de clientes */   
+ .carousel {
   overflow: hidden;
   width: 100%;
-  margin: auto;
+  position: relative;
 }
 
 .carousel-track {
   display: flex;
   gap: 3rem;
-  animation: scroll 20s linear infinite;
+  animation: scroll-loop 30s linear infinite;
+  width: max-content;
 }
 
 .carousel-track img {
   max-height: 60px;
   filter: grayscale(100%);
-  opacity: 0.8;
-  transition: all 0.3s ease-in-out;
+  opacity: 0.7;
+  transition: all 0.3s ease;
 }
 
 .carousel-track img:hover {
@@ -121,12 +98,11 @@
   transform: scale(1.05);
 }
 
-@keyframes scroll {
+/* Scroll infinito lateral */
+@keyframes scroll-loop {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
-
-
 
     footer { text-align: center; padding: 2rem; font-size: 0.9rem; color: #aaa; }
   </style>
@@ -191,14 +167,21 @@
 
   <div class="carousel">
     <div class="carousel-track">
-      <!-- Repita os logos conforme necessário -->
-      <img src="LOGO_CM.png" alt="Cliente 1">
-      <img src="LOGO_GLUP.png" alt="Cliente 2">
-      <img src="LOGO_META.png" alt="Cliente 3">
-      <img src="LOGO_RJNA.png" alt="Cliente 4">
-      <img src="LOGO_SC.png" alt="Cliente 5">
-      <img src="LOGO_XIQUE.png" alt="Cliente 6">
-      <!-- Duplicados para loop infinito -->
+      <!-- 6 logos originais -->
+      <img src="LOGO_CM.png" alt="Cliente 1" />
+      <img src="LOGO_GLUP.png" alt="Cliente 2" />
+      <img src="LOGO_META.png" alt="Cliente 3" />
+      <img src="LOGO_RJNA.png" alt="Cliente 4" />
+      <img src="LOGO_SCS.png" alt="Cliente 5" />
+      <img src="LOGO_XIQUE.png" alt="Cliente 6" />
+
+      <!-- Mesmos 6 logos duplicados (para looping) -->
+      <img src="LOGO_CM.png" alt="Cliente 1" />
+      <img src="LOGO_GLUP.png" alt="Cliente 2" />
+      <img src="LOGO_META.png" alt="Cliente 3" />
+      <img src="LOGO_RJNA.png" alt="Cliente 4" />
+      <img src="LOGO_SCS.png" alt="Cliente 5" />
+      <img src="LOGO_XIQUE.png" alt="Cliente 6" />
     </div>
   </div>
 </section>

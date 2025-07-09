@@ -85,7 +85,7 @@
 
 .clientes-texto h2 span {
   font-weight: 700;
-  color: #c5ff40; /* Verde neon claro */
+  color: #c5ff40;
 }
 
 .clientes-texto p {
@@ -95,27 +95,37 @@
   font-size: 1.2rem;
 }
 
-.clientes-logos {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 2rem;
-  justify-items: center;
-  align-items: center;
+/* Carrossel */
+.carousel {
+  overflow: hidden;
+  width: 100%;
+  margin: auto;
 }
 
-.clientes-logos img {
-  max-height: 130px;
-  max-width: 120px;
+.carousel-track {
+  display: flex;
+  gap: 3rem;
+  animation: scroll 20s linear infinite;
+}
+
+.carousel-track img {
+  max-height: 60px;
   filter: grayscale(100%);
   opacity: 0.8;
   transition: all 0.3s ease-in-out;
 }
 
-.clientes-logos img:hover {
+.carousel-track img:hover {
   filter: grayscale(0%);
   opacity: 1;
   transform: scale(1.05);
 }
+
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
 
 
     footer { text-align: center; padding: 2rem; font-size: 0.9rem; color: #aaa; }

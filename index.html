@@ -139,6 +139,19 @@
     footer { text-align: center; padding: 2rem; font-size: 0.9rem; color: #aaa; }
   </style>
 </head>
+  <script>
+  function enviarParaWhatsapp() {
+    const nome = document.getElementById("nome").value;
+    const email = document.getElementById("email").value;
+    const mensagem = document.getElementById("mensagem").value;
+
+    const texto = `Olá, sou ${nome}! Meu e-mail é ${email}.\n\nSobre minha marca/projeto: ${mensagem}`;
+    const url = "https://wa.me/5581988906161?text=" + encodeURIComponent(texto);
+
+    window.open(url, "_blank");
+  }
+</script>
+
 <body>
   <header>
     <div class="logotipo">
@@ -214,12 +227,13 @@
   <section class="form-section" id="contato">
     <h2 class="section-title">Vamos tirar sua marca do papel e colocar pra vender?</h2>
     <p>Preencha o formulário abaixo e receba uma proposta em até 24h.</p>
-    <form>
-      <input type="text" placeholder="Seu nome" required />
-      <input type="email" placeholder="Seu e-mail" required />
-      <textarea placeholder="Conte brevemente sobre sua marca ou projeto"></textarea>
-      <button type="submit">Quero conversar com a Aciona</button>
-    </form>
+    <form onsubmit="enviarParaWhatsapp(); return false;">
+  <input type="text" id="nome" placeholder="Seu nome" required />
+  <input type="email" id="email" placeholder="Seu e-mail" required />
+  <textarea id="mensagem" placeholder="Conte brevemente sobre sua marca ou projeto"></textarea>
+  <button type="submit">Quero conversar com a Aciona</button>
+</form>
+
   </section>
 
   <footer>

@@ -142,7 +142,7 @@
       100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(197, 255, 89, 0); }
     }
 
-    .botao-pulsante {
+    .botao-pulsante { 
       background-color: #c5ff59;
       color: #000;
       border: none;
@@ -162,27 +162,12 @@
     .clientes-texto h2 { font-size: 2.5rem; color: #bcf452; }
     .clientes-texto span { color: #ffffff; }
     .clientes-texto p { color: #aaa; font-size: 1.1rem; }
+    .clientes-topo {padding-top: 0.2rem; padding-botton: 0.2rem;}
 
     .carousel { overflow: hidden; width: 100%; position: relative; }
-    .carousel-track {
-      display: flex;
-      gap: 3rem;
-      animation: scroll-loop 40s linear infinite;
-      width: max-content;
-    }
-
-    .carousel-track img {
-      max-height: 90px;
-      filter: grayscale(100%);
-      opacity: 0.7;
-      transition: all 0.3s ease;
-    }
-
-    .carousel-track img:hover {
-      filter: grayscale(0%);
-      opacity: 1;
-      transform: scale(1.05);
-    }
+    .carousel-track { display: flex; gap: 3rem; animation: scroll-loop 40s linear infinite; width: max-content;}
+    .carousel-track img { max-height: 90px; filter: grayscale(100%); opacity: 0.7; transition: all 0.3s ease;}
+    .carousel-track img:hover { filter: grayscale(0%); opacity: 1; transform: scale(1.05);}
 
     @keyframes scroll-loop {
       0% { transform: translateX(0); }
@@ -202,10 +187,6 @@
       .form-section input, .form-section textarea { font-size: 0.9rem; padding: 0.75rem; }
       .botao-pulsante { font-size: 0.95rem; padding: 0.8rem 1.6rem; }
     }
-    .clientes-topo {
-  padding-top: 0.2rem; /* ou ajuste conforme a altura do header */
-  padding-botton: 0.2rem;
-}
 
 
     footer { text-align: center; padding: 2rem; font-size: 0.9rem; color: #aaa; }

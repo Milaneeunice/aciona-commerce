@@ -40,7 +40,21 @@
       transform: scale(1.05);
     }
 
-    header, section, footer { padding: 2rem 1rem; max-width: 1200px; margin: auto; }
+   header, section, footer {
+  padding: 2rem 1rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* SOMENTE PARA DESKTOP */
+@media (min-width: 1024px) {
+  header, section, footer {
+    margin: 0 auto 2rem auto; /* topo 0, baixo 2rem, laterais auto */
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
 
     header { display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; background-color: #0f0f0f; z-index: 1000; }
     .logo { font-size: 1.8rem; font-weight: 800; color: #bcf452; }

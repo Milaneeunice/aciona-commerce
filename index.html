@@ -207,6 +207,75 @@
       .botao-pulsante { font-size: 0.95rem; padding: 0.8rem 1.6rem; }
     }
 
+    .clientes-section {
+  background-color: #000;
+  padding: 80px 20px;
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.box {
+  background-color: #111;
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 0 0 1px #1a1a1a;
+}
+
+.box h2 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+
+.box ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+.box ul li {
+  margin-bottom: 12px;
+}
+
+.box.positive {
+  border-left: 4px solid #B6FF37;
+}
+
+.box.negative {
+  border-left: 4px solid #FF4D4D;
+}
+
+.cta-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.cta-button {
+  background-color: #B6FF37;
+  color: #000;
+  padding: 14px 28px;
+  font-weight: 600;
+  font-size: 16px;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+  background-color: #d2ff6b;
+}
+
+
 
     footer { text-align: center; padding: 2rem; font-size: 0.9rem; color: #aaa; }
   </style>
@@ -282,31 +351,32 @@
   </section>
 
 
-  <section class="bg-black py-20 px-6 lg:px-24 text-white">
-  <div class="max-w-6xl mx-auto">
-    <div class="grid lg:grid-cols-2 gap-12">
-      
-      <!-- Box: Clientes que buscamos -->
-      <div class="bg-[#111111] border-l-4 border-lime-400 p-8 rounded-2xl shadow-lg">
-        <h3 class="text-2xl font-bold text-lime-400 mb-6">✅ Clientes que buscamos</h3>
-        <ul class="space-y-4 text-lg text-white">
-          <li>🧠 Empreendedores comprometidos com a construção de um e-commerce de atacado sólido e lucrativo.</li>
-          <li>📊 Que entendem que o sucesso exige estratégia, consistência e análise de dados.</li>
-          <li>🚀 Buscam crescimento sustentável e estão dispostos a investir no digital com seriedade.</li>
-        </ul>
-      </div>
-
-      <!-- Box: Clientes que não buscamos -->
-      <div class="bg-[#111111] border-l-4 border-red-500 p-8 rounded-2xl shadow-lg">
-        <h3 class="text-2xl font-bold text-red-400 mb-6">❌ Não é pra você se</h3>
-        <ul class="space-y-4 text-lg text-white">
-          <li>⏳ Espera resultados imediatos, sem base sólida ou processo validado.</li>
-          <li>🎲 Trata o e-commerce como um experimento casual, sem dedicação real.</li>
-          <li>🪄 Acredita que só criar uma loja virtual já garante vendas e crescimento automático.</li>
-        </ul>
-      </div>
-
+  <section class="clientes-section">
+  <div class="container">
+    <div class="box positive">
+      <h2>✅ Clientes que buscamos</h2>
+      <ul>
+        <li>🧠 Empreendedores comprometidos com a construção de um e-commerce de atacado sólido e lucrativo.</li>
+        <li>📊 Que entendem que o sucesso exige estratégia, consistência e análise de dados.</li>
+        <li>🚀 Buscam crescimento sustentável e estão dispostos a investir no digital com seriedade.</li>
+      </ul>
     </div>
+
+    <div class="box negative">
+      <h2>❌ Não é pra você se</h2>
+      <ul>
+        <li>⏳ Espera resultados imediatos, sem base sólida ou processo validado.</li>
+        <li>🎲 Trata o e-commerce como um experimento casual, sem dedicação real.</li>
+        <li>🪄 Acredita que só criar uma loja virtual já garante vendas e crescimento automático.</li>
+      </ul>
+    </div>
+
+    <div class="cta-container">
+      <a href="#formulario" class="cta-button">Quero faturar com um E-commerce próprio!</a>
+    </div>
+  </div>
+</section>
+
 
     <!-- CTA -->
     <div class="mt-16 text-center">
